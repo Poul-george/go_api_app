@@ -1,0 +1,11 @@
+version: '3'
+services:
+  go-app:
+    build: ./go
+    image: go-echo-app
+    container_name: go-echo-app
+    tty: true
+    ports:
+      - 1325:1325
+    volumes:
+      - ./go/api:/go/src/
