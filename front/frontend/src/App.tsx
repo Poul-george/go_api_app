@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
+import ViewUsers from './component/view_users';
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,13 +13,14 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <ViewUsers/>
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React YYY
         </a>
       </header>
     </div>

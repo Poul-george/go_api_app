@@ -18,6 +18,6 @@ COPY ./api/ /go/src/
 ENV CGO_ENABLED=0 \
   GOOS=linux \
   GOARCH=amd64
-EXPOSE 1325
+EXPOSE 1324
 
-CMD ["go", "run", "main.go"]
+CMD ["go", "run", "api/main.go"]

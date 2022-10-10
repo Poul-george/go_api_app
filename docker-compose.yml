@@ -6,9 +6,9 @@ services:
     container_name: go-echo-app
     tty: true
     ports:
-      - 1325:1325
+      - 1324:1324
     volumes:
-      - ./go/api:/go/src/
+      - ./go:/go/src/
 
   frontend:
     build: ./front
