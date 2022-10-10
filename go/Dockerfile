@@ -20,4 +20,4 @@ ENV CGO_ENABLED=0 \
   GOARCH=amd64
 EXPOSE 1324
 
-CMD ["go", "run", "api/main.go"]
+# CMD ["go", "run", "api/main.go"]
