@@ -23,7 +23,7 @@ services:
     tty: true
 
   db:
-    platform: linux/x86_64 # M1チップ対応のため追記
+    platform: linux/x86_64
     image: mysql/mysql-server:latest
     container_name: mysql_host 
     environment:
