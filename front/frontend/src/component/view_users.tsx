@@ -5,7 +5,7 @@ type Data = {
     Id: string;
     Name: string;
     Author: string;
-    Day: string;
+    CreatedAt: string;
 }
 
 function UsersView() {
@@ -14,7 +14,7 @@ function UsersView() {
     useEffect(() => {
         const getCharacters = async function () {
         const baseURL = "http://localhost:1324";
-        const responseJson = await axios.get(baseURL + "/json");
+        const responseJson = await axios.get(baseURL + "/users");
         console.log("data", responseJson.data);
         setCharacters(responseJson.data);
         return responseJson;
@@ -34,7 +34,7 @@ function UsersView() {
                 ID: {character.Id} <br/>
                 Name: {character.Name} <br/>
                 Author: {character.Author} <br/>
-                Day: {character.Day} <br/>
+                Day: {character.CreatedAt} <br/>
                 <br/>
                 </div>
             ))}

@@ -17,11 +17,13 @@ services:
     platform: linux/x86_64
     image: mysql/mysql-server:latest
     container_name: mysql_host 
+    hostname: mysql_host
     environment:
       MYSQL_ROOT_PASSWORD: root  
       MYSQL_DATABASE: postapp  
       MYSQL_USER: docker  
       MYSQL_PASSWORD: docker  
+      BIND-ADDRESS: 0.0.0.0
       TZ: 'Asia/Tokyo'  
     volumes:
       - ./db/data:/var/lib/mysql  
@@ -33,3 +35,10 @@ services:
       mysqld --character-set-server=utf8mb4 
       --collation-server=utf8mb4_unicode_ci 
       --default-authentication-plugin=mysql_native_password
+    tty: true
+    networks:
+      - sample-network
+
+networks:
+    sample-network:
+        external: true
