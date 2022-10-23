@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-
-type Data = {
-    Id: string;
-    Name: string;
-    Author: string;
-    CreatedAt: string;
-}
+import { useEffect, useState } from 'react';
+import { getDataApi } from 'axios_hook/Use_api';
+import type {UserData} from 'DataType/Data_type';
 
 function UsersView() {
-    const [characters, setCharacters] = useState<Data[]>([]);
+    const [characters, setCharacters] = useState<UserData[]>([]);
 
     useEffect(() => {
-        const getCharacters = async function () {
-        const baseURL = "http://localhost:1324";
-        const responseJson = await axios.get(baseURL + "/users");
-        console.log("data", responseJson.data);
-        setCharacters(responseJson.data);
-        return responseJson;
-
-        
-        }
-        getCharacters();
+        getDataApi("/users").then((res) => {
+            setCharacters(res);
+        });
     }, [])
-
-    console.log("characters", characters);
 
     return (
         <div className="UsersItem">

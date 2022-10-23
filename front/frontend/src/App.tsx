@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import logo from './logo.svg';
 import ViewUsers from './component/view_users';
 import './App.css';
