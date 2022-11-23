@@ -2,13 +2,13 @@ version: '3'
 services:
 
   frontend:
-    build: ./front
+    build: .
     image: ts-app
     container_name: ts-app
     environment:
       - NODE_ENV=development
     volumes:
-      - ./front/frontend:/usr/src/app
+      - ./frontend:/usr/src/app
     ports:
       - '3000:3000'
     tty: true
