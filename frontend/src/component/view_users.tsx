@@ -18,7 +18,8 @@ function UsersView() {
                 Number: {ind+1} <br/>
                 ID: {character.Id} <br/>
                 Name: {character.Name} <br/>
-                Author: {character.Author} <br/>
+                MailAddress: {character.MailAddress} <br/>
+                Comments: {character.Comments} <br/>
                 Day: {character.CreatedAt} <br/>
                 <br/>
                 </div>
