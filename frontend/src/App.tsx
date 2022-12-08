@@ -1,6 +1,5 @@
 import logo from './logo.svg';
-import ViewUsers from './component/view_users';
-import './App.css';
+import './css/App.css';
 
 function App() {
 
@@ -11,7 +10,6 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <ViewUsers/>
         <a
           className="App-link"
           href="https://reactjs.org"

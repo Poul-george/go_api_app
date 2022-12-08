@@ -1,15 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ViewUsers from './components/pages/view_users';
+import Headers from './components/block/header';
+import { Route, BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Headers/>
+      <div>
+        <Route exact path="/" component={App} />
+        <Route exact path="/users" component={ViewUsers} />
+      </div>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
