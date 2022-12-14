@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/index.css';
+import 'css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ViewUsers from './components/pages/view_users';
-import Headers from './components/block/header';
+import Users from 'components/pages/users/users';
+import Headers from 'components/block/header';
 import { Route, BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
@@ -16,7 +16,7 @@ root.render(
       <Headers/>
       <div>
         <Route exact path="/" component={App} />
-        <Route exact path="/users" component={ViewUsers} />
+        <Route exact path="/users" component={Users} />
       </div>
     </BrowserRouter>
   </React.StrictMode>

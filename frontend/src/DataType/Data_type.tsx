@@ -7,3 +7,11 @@ export type UserData = {
     CreatedAt: string;
     UpdatedAt: string;
 }
+
+export type UserPostData = {
+    name: string;
+    email: string;
+    comments: string;
+    passward: string;
+    confirmationPassward: string;
+}
