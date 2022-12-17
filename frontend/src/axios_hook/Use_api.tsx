@@ -10,7 +10,7 @@ export const getDataApi = async(url: string) => {
     return responseJson.data;
 }
 
-export const postDateApi = async(url: string, date: any) => {
+export const PostDateApi = async(url: string, date: any) => {
     await get_api.post(url, date)
     .then(red => {
         return null

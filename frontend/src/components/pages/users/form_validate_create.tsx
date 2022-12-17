@@ -1,23 +1,38 @@
-import { useEffect } from 'react';
-// import type {UserPostData} from 'DataType/Data_type';
-import { postDateApi } from 'axios_hook/Use_api';
+import { UserMapping } from 'mapping/user_post_mapper';
+import { PostDateApi } from 'axios_hook/Use_api';
 
-// 仮実装
+const ValidationAndCreate = (data: any) => {
+    alert("この内容で投稿してもよろしいでしょうか？");
+    if (!validationData(data)) {
+        alert("パスワードが違います");
+        return false;
+    }
 
-const validationAndCreate = (data: any) => {
-    // event.preventDefault();
-    console.log("agdhgb;bg;zbg;bdiz;");
-    alert("term");
+    if (!postData(UserMapping(data))) {
+        alert("登録できませんでした");
+        return false;
+    }
     
-    useEffect(() => {
-        const res = postDateApi("/users", data)
-        if (res != null) {
-            console.log(res)
-        } else {
-            console.log("create ok!!")
-        }
-    }, []);
-    return null;
+    return true;
 };
 
-export default validationAndCreate;
+const validationData = (data: any) => {
+    if (data.confirmationPassward != data.passward) {
+        return false
+    } 
+    return true
+}
+
+const postData = (data: any) => {
+    var flag = true;
+    const res = PostDateApi("/users", data)
+    if (res != null) {
+        flag = false
+        console.log(res);
+    } else {
+        console.log("create ok!!");
+    }
+    return flag;
+}
+
+export default ValidationAndCreate;
