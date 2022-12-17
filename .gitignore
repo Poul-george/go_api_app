@@ -1,2 +1,5 @@
 .DS_Store
 db/
+sql/
+data/
+001-create-tables.sql

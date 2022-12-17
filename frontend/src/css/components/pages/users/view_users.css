@@ -1,0 +1,9 @@
+.UsersItem {
+    width: 600px;
+    margin: 10px auto;
+}
+.user_text {
+    padding: 10px;
+    background: #282c34;
+    color: white;
+}
