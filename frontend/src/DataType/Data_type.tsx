@@ -1,7 +1,7 @@
 export type UserData = {
     Id: string;
     Name: string;
-    Passward: string;
+    Password: string;
     MailAddress: string;
     Comments: string;
     CreatedAt: string;
@@ -12,6 +12,6 @@ export type UserPostData = {
     name: string;
     email: string;
     comments: string;
-    passward: string;
-    confirmationPassward: string;
+    password: string;
+    confirmationPassword: string;
 }

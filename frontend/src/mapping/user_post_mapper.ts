@@ -5,8 +5,8 @@ export const UserMapping = (data: any) => {
         name: data.name,
         email: data.email,
         comments: data.comments,
-        passward: data.passward,
-        confirmationPassward: data.confirmationPassward,
+        password: data.password,
+        confirmationPassword: data.confirmationPassword,
     }
     
     return format_data;
