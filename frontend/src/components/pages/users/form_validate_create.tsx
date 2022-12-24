@@ -3,8 +3,9 @@ import { PostDateApi } from 'axios_hook/Use_api';
 
 const ValidationAndCreate = (data: any) => {
     alert("この内容で投稿してもよろしいでしょうか？");
-    if (!validationData(data)) {
-        alert("パスワードが違います");
+    const res = validationData(data)
+    if (res != null) {
+        alert(res);
         return false;
     }
 
@@ -17,10 +18,15 @@ const ValidationAndCreate = (data: any) => {
 };
 
 const validationData = (data: any) => {
-    if (data.confirmationPassward != data.passward) {
-        return false
+    if (data.name.length == 0) {return "nameが未入力です"}
+    if (data.email.length == 0) {return "emailが未入力です"}
+    if (data.comments.length == 0) {return "commentsが未入力です"}
+    if (data.password.length == 0) {return "passwordが未入力です"}
+    if (data.confirmationPassword.length == 0) {return "confirmationPasswordが未入力です"}
+    if (data.confirmationPassword != data.password) {
+        return 6
     } 
-    return true
+    return null
 }
 
 const postData = (data: any) => {

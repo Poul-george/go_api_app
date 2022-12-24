@@ -7,8 +7,8 @@ const userPostData: UserPostData = {
     name: '',
     email: '',
     comments: '',
-    passward: '',
-    confirmationPassward: '',
+    password: '',
+    confirmationPassword: '',
 }
 
 const PostFromUsers = () => {
@@ -55,20 +55,20 @@ const PostFromUsers = () => {
             </div>
 
             <div className="inputDivItem" >
-                <input className="userformInput" type="password" name="passward"
+                <input className="userformInput" type="password" name="password"
                     required
                     placeholder="PASSWORD"
-                    value={configurationUsers.passward}
-                    onChange={onChangeValue('passward')}
+                    value={configurationUsers.password}
+                    onChange={onChangeValue('password')}
                 />
             </div>
 
             <div className="inputDivItem" >
-                <input className="userformInput" type="password" name="confirmationPassward"
+                <input className="userformInput" type="password" name="confirmationPassword"
                     required
                     placeholder="CHECK PASSWORD"
-                    value={configurationUsers.confirmationPassward}
-                    onChange={onChangeValue('confirmationPassward')}
+                    value={configurationUsers.confirmationPassword}
+                    onChange={onChangeValue('confirmationPassword')}
                 />
             </div>
 
