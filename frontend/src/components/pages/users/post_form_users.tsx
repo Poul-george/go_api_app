@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import type {UserPostData} from 'DataType/Data_type';
-import ValidationAndCreate from 'components/pages/users/form_validate_create';
+import { ValidationData } from 'components/pages/users/form_validate_create';
+import { UserMapping } from 'mapping/user_post_mapper';
+import { PostDateApi } from 'axios_hook/Use_api';
 import 'css/components/pages/users/post_form_users.css';
 
 const userPostData: UserPostData = {
@@ -18,10 +20,24 @@ const PostFromUsers = () => {
         event.preventDefault();
         setConfigurationUsers({...configurationUsers, [input_name] : event.target.value});
     };
+    
+    const userPostAndFromClear = async() => {
+        alert("この内容で投稿してもよろしいでしょうか？");
+        const res1 = ValidationData(configurationUsers)
+        if (res1 != null) {
+            console.log("error", res1);
+            return;
+        }
 
-    const userPostAndFromClear = () => {
-        if (ValidationAndCreate(configurationUsers)) {
+        const res2 = await PostDateApi("/users", UserMapping(configurationUsers))
+        if (res2 == null) {
+            alert("正常に登録出来ました");
             setConfigurationUsers(userPostData);
+            return;
+        } else {
+            alert("Errorが発生しました");
+            console.log(res2);
+            return;
         }
     };
 
