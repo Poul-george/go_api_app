@@ -11,13 +11,18 @@ export const getDataApi = async(url: string) => {
 }
 
 export const PostDateApi = async(url: string, date: any) => {
+    var res: null | Error = null;
     await get_api.post(url, date)
     .then(red => {
-        return null
+        if (red.status != 200) {
+            res = new Error("network error!");
+        }
+        console.log(red.data);
+        res = null;
     })
     .catch((error) => {
         console.log(error);
-        return error
+        res = new Error(error);
     });
-    return null;
+    return res
 }
