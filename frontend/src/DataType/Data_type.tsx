@@ -1,11 +1,10 @@
 export type UserData = {
-    Id: string;
-    Name: string;
-    Password: string;
-    MailAddress: string;
-    Comments: string;
-    CreatedAt: string;
-    UpdatedAt: string;
+    id: string;
+    name: string;
+    password: string;
+    mail_address: string;
+    comments: string;
+    latest_day: string;
 }
 
 export type UserPostData = {

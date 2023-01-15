@@ -14,14 +14,14 @@ function UsersView() {
 
     return (
         <div className="UsersItem">
-            {characters.map((character,ind) => (
+            {characters.map((character, ind) => (
                 <div className='user_text' key={ind}>
                 Number: {ind+1} <br/>
-                ID: {character.Id} <br/>
-                Name: {character.Name} <br/>
-                MailAddress: {character.MailAddress} <br/>
-                Comments: {character.Comments} <br/>
-                Day: {character.CreatedAt} <br/>
+                ID: {character.id} <br/>
+                Name: {character.name} <br/>
+                MailAddress: {character.mail_address} <br/>
+                Comments: {character.comments} <br/>
+                LatestDay: {character.latest_day} <br/>
                 <br/>
                 </div>
             ))}
