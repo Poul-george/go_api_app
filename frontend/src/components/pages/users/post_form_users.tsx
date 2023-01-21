@@ -3,7 +3,7 @@ import type {UserPostData} from 'DataType/Data_type';
 import { ValidationData } from 'components/pages/users/form_validate_create';
 import { UserMapping } from 'mapping/user_post_mapper';
 import { PostDateApi } from 'axios_hook/Use_api';
-import 'css/components/pages/users/post_form_users.css';
+import 'css/components/pages/users/post_form_users.scss';
 
 const userPostData: UserPostData = {
     name: '',

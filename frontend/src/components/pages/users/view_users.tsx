@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getDataApi } from 'axios_hook/Use_api';
 import type {UserData} from 'DataType/Data_type';
-import 'css/components/pages/users/view_users.css';
+import 'css/components/pages/users/view_users.scss';
 
 function UsersView() {
     const [characters, setCharacters] = useState<UserData[]>([]);
