@@ -12,17 +12,27 @@ function UsersView() {
         });
     }, [])
 
+    // const userDelete = (delete_id: number) => async() => {
+    //     const is_ok = await simpleConfirmRef.current.confirm();
+    //     if (is_ok) {
+
+    //     }
+    // }F
+
     return (
-        <div className="UsersItem">
+        <div className="users_items">
             {characters.map((character, ind) => (
-                <div className='user_text' key={ind}>
-                Number: {ind+1} <br/>
-                ID: {character.id} <br/>
-                Name: {character.name} <br/>
-                MailAddress: {character.mail_address} <br/>
-                Comments: {character.comments} <br/>
-                LatestDay: {character.latest_day} <br/>
-                <br/>
+                <div className="user_item" key={character.id}>
+                    <div className='user_text'>
+                        Number: {ind+1} <br/>
+                        ID: {character.id} <br/>
+                        Name: {character.name} <br/>
+                        MailAddress: {character.mail_address} <br/>
+                        Comments: {character.comments} <br/>
+                        LatestDay: {character.latest_day} <br/>
+                    </div>
+                    {/* <div className="batsu" onClick={userDelete(character.id)}>×</div> */}
+                    <div className="batsu">×</div>
                 </div>
             ))}
         </div>
