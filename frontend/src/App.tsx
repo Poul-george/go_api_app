@@ -1,26 +1,32 @@
-import logo from './logo.svg';
-import 'css/App.scss';
+import './style/css/App.scss';
+import { ThemeProvider } from "@mui/material";
+import { theme } from "./style/theme";
+import { GlobalStateProvider } from "./hooks/context/globalState";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import { Headers } from './components/block/header';
+import { Home } from './components/pages/home/home';
+import { UsersView } from './components/pages/users/view_users';
+import { PostFromUsers } from './components/pages/users/post_form_users';
 
-function App() {
-
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React XXXX
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStateProvider>
+        <AppRouter />
+      </GlobalStateProvider>
+    </ThemeProvider>
   );
 }
 
-export default App;
+const AppRouter = () => {
+  return (
+    <BrowserRouter>
+      <Headers/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/users/create" element={<PostFromUsers />} />
+          <Route path="/users/list" element={<UsersView />} />
+        </Routes>
+    </BrowserRouter>
+  );
+}

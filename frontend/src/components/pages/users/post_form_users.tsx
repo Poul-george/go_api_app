@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import type {UserPostData} from 'DataType/Data_type';
-import { ValidationData } from 'components/pages/users/form_validate_create';
-import { UserMapping } from 'mapping/user_post_mapper';
-import { PostDateApi } from 'axios_hook/Use_api';
-import 'css/components/pages/users/post_form_users.scss';
+import type {UserPostData} from '../../../DataType/Data_type';
+import { ValidationData } from '../../../components/pages/users/form_validate_create';
+import { UserMapping } from '../../../mapping/user_post_mapper';
+import { PostDateApi } from '../../../hooks/axios_hook/Use_api';
+import '../../../style/css/components/pages/users/post_form_users.scss';
 
 const userPostData: UserPostData = {
     name: '',
@@ -13,7 +13,7 @@ const userPostData: UserPostData = {
     confirmationPassword: '',
 }
 
-const PostFromUsers = () => {
+export const PostFromUsers = () => {
     const [configurationUsers, setConfigurationUsers] = useState<UserPostData>(userPostData);
 
     const onChangeValue = (input_name: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -95,6 +95,4 @@ const PostFromUsers = () => {
             </div>
         </div>
     );
-}
-
-export default PostFromUsers;
+};

@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import 'css/components/block/header.scss';
-import UsersLink from 'components/block/user_link';
+import '../../style/css/components/block/header.scss';
+import { UsersLink } from '../../components/block/user_link';
 
-function Headers() {
-
+export const Headers = () => {
     return (
         <div className="Header">
             <header className="Header-header">
@@ -16,5 +15,3 @@ function Headers() {
         </div>
     );
 }
-
-export default Headers;

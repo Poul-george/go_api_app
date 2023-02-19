@@ -1,4 +1,4 @@
-import type {UserPostData} from 'DataType/Data_type';
+import type {UserPostData} from '../DataType/Data_type';
 
 export const UserMapping = (data: any) => {
     const format_data: UserPostData = {
