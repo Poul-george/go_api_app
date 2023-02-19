@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-function UsersLink() {
-
+export const UsersLink = () => {
     return (
         <div className="UserLinkTab">
             <div className="user-header user-create">
@@ -13,5 +12,3 @@ function UsersLink() {
         </div>
     );
 }
-
-export default UsersLink;

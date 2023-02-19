@@ -14,7 +14,7 @@ export const PostDateApi = async(url: string, date: any) => {
     var res: null | Error = null;
     await get_api.post(url, date)
     .then(red => {
-        if (red.status != 200) {
+        if (red.status !== 200) {
             res = new Error("network error!");
         }
         console.log(red.data);
