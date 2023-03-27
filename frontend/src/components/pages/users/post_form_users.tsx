@@ -29,7 +29,7 @@ export const PostFromUsers = () => {
             return;
         }
 
-        const res2 = await PostDateApi("/users", UserMapping(configurationUsers))
+        const res2 = await PostDateApi("api/v1/users", UserMapping(configurationUsers))
         if (res2 == null) {
             alert("正常に登録出来ました");
             setConfigurationUsers(userPostData);
