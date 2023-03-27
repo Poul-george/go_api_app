@@ -7,7 +7,7 @@ export const UsersView = () => {
     const [characters, setCharacters] = useState<UserData[]>([]);
 
     useEffect(() => {
-        getDataApi("/users").then((res) => {
+        getDataApi("api/v1/users").then((res) => {
             setCharacters(res);
         });
     }, [])
@@ -17,7 +17,7 @@ export const UsersView = () => {
     //     if (is_ok) {
 
     //     }
-    // }F
+    // }
 
     return (
         <div className="users_items">
