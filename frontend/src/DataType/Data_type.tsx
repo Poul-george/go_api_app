@@ -1,5 +1,6 @@
 export type UserData = {
     id: number;
+    external_user_id: string;
     name: string;
     password: string;
     mail_address: string;

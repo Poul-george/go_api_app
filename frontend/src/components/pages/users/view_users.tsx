@@ -26,6 +26,7 @@ export const UsersView = () => {
                     <div className='user_text'>
                         Number: {ind+1} <br/>
                         ID: {character.id} <br/>
+                        ExternalUserID: {character.external_user_id} <br/>
                         Name: {character.name} <br/>
                         MailAddress: {character.mail_address} <br/>
                         Comments: {character.comments} <br/>
