@@ -38,6 +38,32 @@ services:
     networks:
       - sample-network
 
+  test-db:
+    platform: linux/x86_64
+    image: mysql/mysql-server:latest
+    container_name: mysql_test 
+    hostname: mysql_test
+    environment:
+      MYSQL_ROOT_PASSWORD: root  
+      MYSQL_DATABASE: mysql_test  
+      MYSQL_USER: test  
+      MYSQL_PASSWORD: test  
+      BIND-ADDRESS: 0.0.0.0
+      TZ: 'Asia/Tokyo'  
+    volumes:
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf  
+      - ./db/sql:/docker-entrypoint-initdb.d
+      - ./db/sql/structure.sql:/docker-entrypoint-initdb.d/00_structure.sql
+    ports:
+      - "3307:3306"
+    command: 
+      mysqld --character-set-server=utf8mb4 
+      --collation-server=utf8mb4_unicode_ci 
+      --default-authentication-plugin=mysql_native_password
+    tty: true
+    networks:
+      - sample-network
+
 networks:
     sample-network:
         external: true
