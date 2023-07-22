@@ -10,7 +10,7 @@ services:
     volumes:
       - ./frontend:/usr/src/app:delegated
     ports:
-      - '3000:3000'
+      - '3001:3000'
     tty: true
 
   db:
@@ -24,7 +24,7 @@ services:
       MYSQL_USER: docker  
       MYSQL_PASSWORD: docker  
       BIND-ADDRESS: 0.0.0.0
-      TZ: 'Asia/Tokyo'  
+      # TZ: 'Asia/Tokyo'  
     volumes:
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf  
       - ./db/sql:/docker-entrypoint-initdb.d
@@ -49,7 +49,7 @@ services:
       MYSQL_USER: test  
       MYSQL_PASSWORD: test  
       BIND-ADDRESS: 0.0.0.0
-      TZ: 'Asia/Tokyo'  
+      # TZ: 'Asia/Tokyo'  
     volumes:
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf  
       - ./db/sql:/docker-entrypoint-initdb.d
@@ -63,6 +63,13 @@ services:
     tty: true
     networks:
       - sample-network
+  
+  redis:
+    image: 'redis:6.2.13'
+    environment:
+      TZ: 'Asia/Tokyo'
+    ports:
+      - 6379:6379
 
 networks:
     sample-network:
