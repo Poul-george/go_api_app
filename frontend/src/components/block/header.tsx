@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import '../../style/css/components/block/header.scss';
-import { UsersLink } from '../../components/block/user_link';
+import { UsersLink } from './userLink';
 
 export const Headers = () => {
     return (

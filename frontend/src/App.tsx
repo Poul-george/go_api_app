@@ -5,8 +5,8 @@ import { GlobalStateProvider } from "./hooks/context/globalState";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Headers } from './components/block/header';
 import { Home } from './components/pages/home/home';
-import { UsersView } from './components/pages/users/view_users';
-import { PostFromUsers } from './components/pages/users/post_form_users';
+import { UsersView } from './components/pages/users/viewUsers';
+import { PostFromUsers } from './components/pages/users/postFormUsers';
 
 export const App = () => {
   return (

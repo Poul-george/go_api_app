@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import type {UserPostData} from '../../../DataType/Data_type';
-import { ValidationData } from '../../../components/pages/users/form_validate_create';
-import { UserMapping } from '../../../mapping/user_post_mapper';
-import { PostDateApi } from '../../../hooks/axios_hook/Use_api';
+import type {UserPostData} from '../../../DataType/dataType';
+import { ValidationData } from './formValidateCreate';
+import { UserMapping } from '../../../mapping/userPostMapper';
+import { PostDateApi } from '../../../hooks/axiosAPI/api';
 import '../../../style/css/components/pages/users/post_form_users.scss';
 
 const userPostData: UserPostData = {
