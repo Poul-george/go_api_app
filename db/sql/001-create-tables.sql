@@ -44,3 +44,7 @@ CREATE TABLE user_details (
 )DEFAULT CHARSET=utf8 CHARACTER SET=utf8;
 
 INSERT INTO user_details (user_id, name, name_kana, profession, occupation, country_of_citizenship, age, birth_date, gender, height, birth_place, residence, work_location, annual_income, title_comennt, profile_comment, created_at, updated_at, deleted_at) VALUES (1, 'LBJ', 'Lebron James', 'アスリート', 'スポーツ選手', 1, 38, '1982-10-10', '1', 206, 'アメリカ', 'アメリカ', 'アメリカ', 1200000, 'Im NBA Player 23', 'test test test test test test', '2023-04-15 22:56:14', '2023-04-15 22:56:14', NULL);
+
+
+CREATE USER 'docker'@'%' IDENTIFIED BY 'docker';
+GRANT ALL PRIVILEGES ON postapp.* TO 'docker'@'%';
